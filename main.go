@@ -3,11 +3,11 @@ package main
 import (
 	"database/sql"
 	"fmt"
-	_ "github.com/angeldm/sql"
+	_ "github.com/denisenkom/go-mssqldb"
 )
 
 func main() {
-	db, err := sql.Open("mgodbc", "dsn=CifecGEST;UID=UCifecGest;PWD=Infor?*eurO;")
+	db, err := sql.Open("mssql", "server=192.168.0.4;user id=UCifecGest;database=CifecGEST;password=Infor?*eurO;")
 	if err != nil {
 		fmt.Printf("Couldn't open DB: %s", err)
 		return
